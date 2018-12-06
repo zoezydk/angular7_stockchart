@@ -1,13 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { StockChart } from 'angular-highcharts';
+// import { rpadata_mssql } from './rpadata_mssql_old';
 // import 'highcharts-ng';
 // import { Chart } from 'chart.js'; // <-- for use with node-mssql - ignore!
 //import { rpadata_mssql_old } from 'src/app/rpadata_mssql_old'; // <-- previous attempt to use mssql for MS SQL database access - not used!
-//import 'src/server_old.js'; // <-- previous js file containing mssql access code - accesses data, cannot be used due to limitations in server hardware!
+//import 'src/server_old.js'; // <-- previous js file containing mssql access code and accesses data, cannot be used due to limitations in server hardware!
 
 // declare var server: any;
 
 @Component({
+//   template: `
+//   <div [chart]="stockChart"></div>
+// `,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
@@ -18,10 +22,11 @@ export class AppComponent implements OnInit {
 
   title = 'RPA';
 
-
   stock: StockChart;
+  
 
   // LineChart = []; // for use with node-mssql - ignore!
+
 
   constructor() { }
 
@@ -36,7 +41,7 @@ export class AppComponent implements OnInit {
         selected: 5 //preselects button in range selector
       },
       title: {
-        text: 'AAPL Stock Price'
+        text: 'RPA data'
       },
 
       legend: {
@@ -72,34 +77,38 @@ export class AppComponent implements OnInit {
 
         {
 
-          tooltip: {
-          // pointFormat: "Value: {rpadatares[0].TaskResult)} ms",
-          valueDecimals: 0
-          },
+          // tooltip: {
+          // // pointFormat: "Value: {rpadatares[0].TaskResult)} ms",
+          // valueDecimals: 0
+          // },
 
           name: 'Emne værdi 1', data: [
             // [56, 53, 51]
+
+            [1293580800000, 47.47],
+            [1293667200000, 51.24],
+            [1293753600000, 56.08],
             /* Jan 2011 */
-            [1294012800000, 48.08],
-            [1294099200000, 48.33],
+            [1294012800000, 58.08],
+            [1294099200000, 52.33],
             [1294185600000, 48.71],
-            // [1294272000000, 48.68],
-            // [1294358400000, 49.02],
-            // [1294617600000, 49.92],
-            // [1294704000000, 52.81],
-            // [1294790400000, 54.20],
-            // [1294876800000, 55.38],
-            // [1294963200000, 59.78],
-            // [1295308800000, 52.66],
-            // [1295395200000, 55.41],
-            // [1295481600000, 56.53],
-            // [1295568000000, 58.67],
-            // [1295827200000, 52.21],
-            // [1295913600000, 54.77],
-            // [1296000000000, 57.12],
-            // [1296086400000, 54.03],
-            // [1296172800000, 53.01],
-            // [1296432000000, 54.47]          
+            [1294272000000, 55.68],
+            [1294358400000, 49.02],
+            [1294617600000, 49.92],
+            [1294704000000, 52.81],
+            [1294790400000, 54.20],
+            [1294876800000, 55.38],
+            [1294963200000, 59.78],
+            [1295308800000, 52.66],
+            [1295395200000, 55.41],
+            [1295481600000, 56.53],
+            [1295568000000, 58.67],
+            [1295827200000, 52.21],
+            [1295913600000, 54.77],
+            [1296000000000, 57.12],
+            [1296086400000, 54.03],
+            [1296172800000, 53.01],
+            [1296432000000, 54.47]
           ]
 
 
@@ -136,7 +145,7 @@ export class AppComponent implements OnInit {
         //     [1296000000000, 49.12],
         //     [1296086400000, 49.03],
         //     [1296172800000, 48.01],
-        //     [1296432000000, 48.47]         
+        //     [1296432000000, 48.47]
         //   ]
 
 
@@ -172,7 +181,7 @@ export class AppComponent implements OnInit {
         //     [1296000000000, 49.12],
         //     [1296086400000, 49.03],
         //     [1296172800000, 48.01],
-        //     [1296432000000, 48.47]         
+        //     [1296432000000, 48.47]
         //   ]
 
 
@@ -208,7 +217,7 @@ export class AppComponent implements OnInit {
         //     [1296000000000, 50.12],
         //     [1296086400000, 50.03],
         //     [1296172800000, 49.01],
-        //     [1296432000000, 49.47]         
+        //     [1296432000000, 49.47]
         //   ]
 
 
@@ -244,7 +253,7 @@ export class AppComponent implements OnInit {
         //     [1296000000000, 49.12],
         //     [1296086400000, 49.03],
         //     [1296172800000, 48.01],
-        //     [1296432000000, 48.47]         
+        //     [1296432000000, 48.47]
         //   ]
 
 
@@ -280,7 +289,7 @@ export class AppComponent implements OnInit {
         //     [1296000000000, 49.12],
         //     [1296086400000, 49.03],
         //     [1296172800000, 48.01],
-        //     [1296432000000, 48.47]         
+        //     [1296432000000, 48.47]
         //   ]
 
 
@@ -316,7 +325,7 @@ export class AppComponent implements OnInit {
         //     [1296000000000, 111.12],
         //     [1296086400000, 111.03],
         //     [1296172800000, 111.01],
-        //     [1296432000000, 111.47]         
+        //     [1296432000000, 111.47]
         //   ]
 
 
